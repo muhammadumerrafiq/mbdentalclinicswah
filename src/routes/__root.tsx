@@ -24,7 +24,9 @@ function NotFoundComponent() {
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
-          <Link to="/" className="btn-gold hover:[&]:btn-gold-hover">Go home</Link>
+          <Link to="/" className="btn-gold hover:[&]:btn-gold-hover">
+            Go home
+          </Link>
         </div>
       </div>
     </div>
@@ -41,11 +43,28 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">This page didn't load</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Something went wrong. Try refreshing or go home.</p>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          This page didn't load
+        </h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Something went wrong. Try refreshing or go home.
+        </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <button onClick={() => { router.invalidate(); reset(); }} className="btn-gold">Try again</button>
-          <a href="/" className="inline-flex items-center justify-center rounded-full border border-border bg-background px-6 py-3 text-sm font-medium">Go home</a>
+          <button
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="btn-gold"
+          >
+            Try again
+          </button>
+          <a
+            href="/"
+            className="inline-flex items-center justify-center rounded-full border border-border bg-background px-6 py-3 text-sm font-medium"
+          >
+            Go home
+          </a>
         </div>
       </div>
     </div>
@@ -58,22 +77,45 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "MB Dental Clinic Wah" },
-      { name: "description", content: "MB Dental Clinic Wah delivers premium, painless dental care — cosmetic, restorative & advanced treatments led by Dr. Barkat Ali Khan." },
+      {
+        name: "description",
+        content:
+          "MB Dental Clinic Wah delivers premium, painless dental care — cosmetic, restorative & advanced treatments led by Dr. Barkat Ali Khan.",
+      },
       { name: "author", content: "MB Dental Clinic" },
       { property: "og:title", content: "MB Dental Clinic Wah" },
-      { property: "og:description", content: "MB Dental Clinic Wah delivers premium, painless dental care — cosmetic, restorative & advanced treatments led by Dr. Barkat Ali Khan." },
+      {
+        property: "og:description",
+        content:
+          "MB Dental Clinic Wah delivers premium, painless dental care — cosmetic, restorative & advanced treatments led by Dr. Barkat Ali Khan.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "MB Dental Clinic Wah" },
-      { name: "twitter:description", content: "MB Dental Clinic Wah delivers premium, painless dental care — cosmetic, restorative & advanced treatments led by Dr. Barkat Ali Khan." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/38f4bd25-92cb-4600-9df4-ec51d235451e/id-preview-10aed7fa--67e3073b-bedd-406b-ab6b-820efedeaca8.lovable.app-1781947694756.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/38f4bd25-92cb-4600-9df4-ec51d235451e/id-preview-10aed7fa--67e3073b-bedd-406b-ab6b-820efedeaca8.lovable.app-1781947694756.png" },
+      {
+        name: "twitter:description",
+        content:
+          "MB Dental Clinic Wah delivers premium, painless dental care — cosmetic, restorative & advanced treatments led by Dr. Barkat Ali Khan.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/38f4bd25-92cb-4600-9df4-ec51d235451e/id-preview-10aed7fa--67e3073b-bedd-406b-ab6b-820efedeaca8.lovable.app-1781947694756.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/38f4bd25-92cb-4600-9df4-ec51d235451e/id-preview-10aed7fa--67e3073b-bedd-406b-ab6b-820efedeaca8.lovable.app-1781947694756.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -85,7 +127,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head><HeadContent /></head>
+      <head>
+        <HeadContent />
+      </head>
       <body>
         {children}
         <Scripts />
